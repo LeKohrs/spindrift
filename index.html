@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Spindrift</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="_ui/skin/dist/css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Touch a can</h1>
+            <p>
+                Touch a can to find out more.
+            </p>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyD-ayFxsfLD0_PrBZht9Z93iWWpSdgahOE",
+                authDomain: "spindrift-4f1b2.firebaseapp.com",
+                databaseURL: "https://spindrift-4f1b2.firebaseio.com",
+                projectId: "spindrift-4f1b2",
+                storageBucket: "",
+                messagingSenderId: "505378437671"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="app.js"></script>
+        <script src="_ui/skin/dist/js/vendor.bundle.js"></script>
+        <script src="_ui/skin/dist/js/main.bundle.js"></script>
+    </body>
+</html>
