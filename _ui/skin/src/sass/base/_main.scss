@@ -1,0 +1,86 @@
+h2,
+h1,
+p,
+li {
+    font-family: Helvetica, sans-serif;
+}
+h2,
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 80px;
+    color: $site-purple;
+}
+h2 {
+    font-size: 30px;
+    color: $site-purple-lite;
+}
+p,
+li {
+    color: $site-grey;
+}
+p {
+    margin-top: 20px;
+}
+li {
+    list-style: none;
+}
+#app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    .main-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+    .drink-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100vw;
+        height: 100vh;
+
+        img {
+            max-width: 250px;
+        }
+        .text {
+            margin: 0 auto;
+            max-width: 900px;
+        }
+        .ingredients {
+            display: flex;
+            justify-content: center;
+            padding-left: 0;
+        }
+        .ingredients li {
+            margin-right: 2px;
+            font-style: italic;
+
+            &:after {
+                content: ', ';
+                white-space: pre;
+            }
+            &:last-child:after {
+                content: none;
+            }
+        }
+        .nutrition {
+            margin: 0 auto;
+        }
+        .nutrition tr td:first-child {
+            min-width: 200px;
+            text-align: left;
+        }
+        .nutrition tr td:last-child {
+            text-align: right;
+        }
+    }
+}

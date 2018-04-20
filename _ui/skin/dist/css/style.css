@@ -1,27 +1,39 @@
-.container { display: -ms-grid; display: grid; -ms-grid-columns: auto minmax(min-content, 1fr); grid-template-columns: auto minmax(min-content, 1fr); height: 100vh; }
+h2, h1, p, li { font-family: Helvetica, sans-serif; }
 
-nav { -ms-grid-column: 1; grid-column: 1; -ms-grid-row: 1; grid-row: 1; background-color: #dfe6e9; min-width: 250px; margin: 0; z-index: 1000; }
+h2, h1 { margin: 0; text-transform: uppercase; }
 
-nav ul { padding: 0; list-style: none; margin: 0; }
+h1 { font-size: 80px; color: #685bc7; }
 
-nav ul li { padding: 20px 40px; border-top: solid 1px #636e72; }
+h2 { font-size: 30px; color: #a8a4e1; }
 
-nav ul li:last-of-type { border-bottom: solid 1px #636e72; }
+p, li { color: #676f78; }
 
-nav ul li a { text-decoration: none; }
+p { margin-top: 20px; }
 
-main { -ms-grid-column: 2; grid-column: 2; -ms-grid-row: 1; grid-row: 1; margin: 0; padding: 0; height: 100%; }
+li { list-style: none; }
 
-main h1 { margin: 0; }
+#app { position: relative; width: 100vw; height: 100vh; }
 
-main .barba-container { height: 100%; }
+#app .main-text { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; -ms-flex-direction: column; flex-direction: column; width: 100vw; height: 100vh; }
 
-.page { height: 100%; padding-left: 50px; }
+#app .drink-info { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: center; align-items: center; text-align: center; width: 100vw; height: 100vh; }
 
-.page--home { background-color: #74b9ff; }
+#app .drink-info img { max-width: 250px; }
 
-.page--about { background-color: #6c5ce7; }
+#app .drink-info .text { margin: 0 auto; max-width: 900px; }
 
-.page--contact { background-color: #d63031; }
+#app .drink-info .ingredients { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; padding-left: 0; }
+
+#app .drink-info .ingredients li { margin-right: 2px; font-style: italic; }
+
+#app .drink-info .ingredients li:after { content: ', '; white-space: pre; }
+
+#app .drink-info .ingredients li:last-child:after { content: none; }
+
+#app .drink-info .nutrition { margin: 0 auto; }
+
+#app .drink-info .nutrition tr td:first-child { min-width: 200px; text-align: left; }
+
+#app .drink-info .nutrition tr td:last-child { text-align: right; }
 
 /*# sourceMappingURL=style.css.map*/

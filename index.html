@@ -8,24 +8,43 @@
         <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     </head>
     <body>
-        <div class="app">
-            <h1>Touch a can</h1>
-            <p>
-                Touch a can to find out more.
-            </p>
+        <div id="app">
+            <div class="main-text" v-if="showMain">
+                <h1>Spindrift</h1>
+                <h2>Its amazing</h2>
+                <p>
+                    Go on. You can touch it.
+                </p>
+            </div>
+            <div class="drink-info" v-if="showDrink" :class="[drink.title.toLowerCase()]">
+                <img :src="['_ui/skin/src/' + drink.img]"/>
+                <h2 class="name">{{ drink.title }}</h2>
+                <p class="text">
+                    {{ drink.text }}
+                </p>
+                <ul class="ingredients">
+                    <li v-for="item in drink.ingredients">{{ item }}</li>
+                </ul>
+                <!-- <ul class="nutrition">
+                    <li v-for="(item, index) in drink.nutrition">
+                        {{ index }}: {{ item }}
+                    </li>
+                </ul> -->
+                <table class="nutrition">
+                    <tr v-for="(item, index) in drink.nutrition">
+                        <td>
+                            {{ index }}
+                        </td>
+                        <td>
+                            {{ item }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
         <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyD-ayFxsfLD0_PrBZht9Z93iWWpSdgahOE",
-                authDomain: "spindrift-4f1b2.firebaseapp.com",
-                databaseURL: "https://spindrift-4f1b2.firebaseio.com",
-                projectId: "spindrift-4f1b2",
-                storageBucket: "",
-                messagingSenderId: "505378437671"
-            };
-            firebase.initializeApp(config);
+
         </script>
         <script src="app.js"></script>
         <script src="_ui/skin/dist/js/vendor.bundle.js"></script>
