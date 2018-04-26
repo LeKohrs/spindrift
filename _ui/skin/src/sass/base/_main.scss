@@ -15,7 +15,7 @@ h1 {
     color: $site-purple;
 }
 h2 {
-    font-size: 30px;
+    font-size: 48px;
     color: $site-purple-lite;
 }
 p,
@@ -63,6 +63,73 @@ li {
             &:after {
                 background-color: $site-color-halfhalf;
             }
+
+            .name {
+                color: $site-color-halfhalf-header;
+            }
+        }
+        &.strawberry {
+            &:after {
+                background-color: $site-color-strawberry;
+            }
+
+            .name {
+                color: $site-color-strawberry;
+            }
+        }
+        &.grapefruit {
+            &:after {
+                background-color: $site-color-grapefruit;
+            }
+
+            .name {
+                color: $site-color-grapefruit;
+            }
+        }
+        &.blackberry {
+            &:after {
+                background-color: $site-color-blackberry;
+            }
+
+            .name {
+                color: $site-color-blackberry;
+            }
+        }
+        &.cucumber {
+            &:after {
+                background-color: $site-color-cucumber;
+            }
+
+            .name {
+                color: $site-color-cucumber;
+            }
+        }
+        &.lemon {
+            &:after {
+                background-color: $site-color-lemon;
+            }
+
+            .name {
+                color: $site-color-lemon;
+            }
+        }
+        &.orange {
+            &:after {
+                background-color: $site-color-orange;
+            }
+
+            .name {
+                color: $site-color-orange;
+            }
+        }
+        &.raspberry {
+            &:after {
+                background-color: $site-color-raspberry;
+            }
+
+            .name {
+                color: $site-color-raspberry;
+            }
         }
         img {
             max-width: 250px;
@@ -71,9 +138,30 @@ li {
         &__info,
         &__text {
             margin: 0 25px;
-            width: calc(33% - 50px);
+        }
+        &__info,
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__text {
+            width: calc(50% - 50px);
+            height: 167px;
+            transform: translateY(25px);
+        }
+        img,
+        &__info {
+            width: calc(25% - 50px);
+        }
+        &__info {
+            height: auto;
+            transform: translateY(37px);
         }
         .name {
+            // margin-bottom: 100px;
+            font-style: italic;
         }
         .text {
             max-width: 900px;
@@ -81,11 +169,14 @@ li {
         .ingredients {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
             padding-left: 0;
         }
         .ingredients li {
             margin-right: 2px;
             font-style: italic;
+            line-height: 1.5;
 
             &:after {
                 content: ', ';
@@ -95,7 +186,10 @@ li {
                 content: none;
             }
         }
+        .text,
         .nutrition {
+            color: white;
+            letter-spacing: 1px;
         }
         .nutrition tr td:first-child {
             min-width: 200px;
