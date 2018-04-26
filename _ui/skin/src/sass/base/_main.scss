@@ -1,7 +1,8 @@
 h2,
 h1,
 p,
-li {
+li,
+table {
     font-family: Helvetica, sans-serif;
 }
 h2,
@@ -18,7 +19,8 @@ h2 {
     color: $site-purple-lite;
 }
 p,
-li {
+li,
+table {
     color: $site-grey;
 }
 p {
@@ -42,17 +44,38 @@ li {
     }
     .drink-info {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
         text-align: center;
         width: 100vw;
         height: 100vh;
 
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100vw;
+            height: 50vh;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+        &.half {
+            &:after {
+                background-color: $site-color-halfhalf;
+            }
+        }
         img {
             max-width: 250px;
         }
+        img,
+        &__info,
+        &__text {
+            margin: 0 25px;
+            width: calc(33% - 50px);
+        }
+        .name {
+        }
         .text {
-            margin: 0 auto;
             max-width: 900px;
         }
         .ingredients {
@@ -73,7 +96,6 @@ li {
             }
         }
         .nutrition {
-            margin: 0 auto;
         }
         .nutrition tr td:first-child {
             min-width: 200px;

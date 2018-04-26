@@ -1,4 +1,4 @@
-h2, h1, p, li { font-family: Helvetica, sans-serif; }
+h2, h1, p, li, table { font-family: Helvetica, sans-serif; }
 
 h2, h1 { margin: 0; text-transform: uppercase; }
 
@@ -6,7 +6,7 @@ h1 { font-size: 80px; color: #685bc7; }
 
 h2 { font-size: 30px; color: #a8a4e1; }
 
-p, li { color: #676f78; }
+p, li, table { color: #676f78; }
 
 p { margin-top: 20px; }
 
@@ -16,11 +16,17 @@ li { list-style: none; }
 
 #app .main-text { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; -ms-flex-direction: column; flex-direction: column; width: 100vw; height: 100vh; }
 
-#app .drink-info { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: center; align-items: center; text-align: center; width: 100vw; height: 100vh; }
+#app .drink-info { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; width: 100vw; height: 100vh; }
+
+#app .drink-info:after { content: ''; position: absolute; width: 100vw; height: 50vh; bottom: 0; left: 0; z-index: -1; }
+
+#app .drink-info.half:after { background-color: #c08d69; }
 
 #app .drink-info img { max-width: 250px; }
 
-#app .drink-info .text { margin: 0 auto; max-width: 900px; }
+#app .drink-info img, #app .drink-info__info, #app .drink-info__text { margin: 0 25px; width: calc(33% - 50px); }
+
+#app .drink-info .text { max-width: 900px; }
 
 #app .drink-info .ingredients { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; padding-left: 0; }
 
@@ -29,8 +35,6 @@ li { list-style: none; }
 #app .drink-info .ingredients li:after { content: ', '; white-space: pre; }
 
 #app .drink-info .ingredients li:last-child:after { content: none; }
-
-#app .drink-info .nutrition { margin: 0 auto; }
 
 #app .drink-info .nutrition tr td:first-child { min-width: 200px; text-align: left; }
 

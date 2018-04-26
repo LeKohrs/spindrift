@@ -17,29 +17,28 @@
                 </p>
             </div>
             <div class="drink-info" v-if="showDrink" :class="[drink.title.toLowerCase()]">
+                <div class="drink-info__text">
+                    <h2 class="name">{{ drink.title }}</h2>
+                    <p class="text">
+                        {{ drink.text }}
+                    </p>
+                </div>
                 <img :src="['_ui/skin/src/' + drink.img]"/>
-                <h2 class="name">{{ drink.title }}</h2>
-                <p class="text">
-                    {{ drink.text }}
-                </p>
-                <ul class="ingredients">
-                    <li v-for="item in drink.ingredients">{{ item }}</li>
-                </ul>
-                <!-- <ul class="nutrition">
-                    <li v-for="(item, index) in drink.nutrition">
-                        {{ index }}: {{ item }}
-                    </li>
-                </ul> -->
-                <table class="nutrition">
-                    <tr v-for="(item, index) in drink.nutrition">
-                        <td>
-                            {{ index }}
-                        </td>
-                        <td>
-                            {{ item }}
-                        </td>
-                    </tr>
-                </table>
+                <div class="drink-info__info">
+                    <ul class="ingredients">
+                        <li v-for="item in drink.ingredients">{{ item }}</li>
+                    </ul>
+                    <table class="nutrition">
+                        <tr v-for="(item, index) in drink.nutrition">
+                            <td>
+                                {{ index }}
+                            </td>
+                            <td>
+                                {{ item }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
