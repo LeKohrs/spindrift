@@ -1,4 +1,4 @@
-h2, h1, p, li, table { font-family: Helvetica, sans-serif; }
+h3, h2, h1, p, li, table { font-family: Helvetica, sans-serif; }
 
 h2, h1 { margin: 0; text-transform: uppercase; }
 
@@ -81,5 +81,17 @@ li { list-style: none; }
 #app .drink-info .nutrition tr td:first-child { min-width: 200px; text-align: left; }
 
 #app .drink-info .nutrition tr td:last-child { text-align: right; }
+
+#app .first-warning, #app .final-warning, #app .alarm, #app .shut-down { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; position: absolute; z-index: 10; background: white; }
+
+#app .banner { height: 90px; width: 100vw; top: 100px; left: 0; }
+
+#app .pop-up { width: 800px; height: 500px; top: 50%; left: 50%; color: red; text-transform: uppercase; transform: translate(-50%, -50%); border: 1px solid red; box-shadow: 0 0 5px grey; text-align: center; }
+
+#app .pop-up h3 { font-size: 40px; }
+
+#app .full { width: 100vw; height: 100vh; top: 0; left: 0; }
+
+#app .shut-down { color: white; background: black; }
 
 /*# sourceMappingURL=style.css.map*/
