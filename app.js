@@ -66,34 +66,42 @@ var app = new Vue({
                     case 'w':
                         this.drink = {};
                         this.drink = this.drinks.HalfHalf.drink;
+                        this.resetWarnings()
                         break;
                     case 'e':
                         this.drink = {};
                         this.drink = this.drinks.Strawberry.drink;
+                        this.resetWarnings()
                         break;
                     case 'r':
                         this.drink = {};
                         this.drink = this.drinks.Grapefruit.drink;
+                        this.resetWarnings()
                         break;
                     case 't':
                         this.drink = {};
                         this.drink = this.drinks.Blackberry.drink;
+                        this.resetWarnings()
                         break;
                     case 'y':
                         this.drink = {};
                         this.drink = this.drinks.Cucumber.drink;
+                        this.resetWarnings()
                         break;
                     case 'u':
                         this.drink = {};
                         this.drink = this.drinks.Lemon.drink;
+                        this.resetWarnings()
                         break;
                     case 'i':
                         this.drink = {};
                         this.drink = this.drinks.OrangeMango.drink;
+                        this.resetWarnings()
                         break;
                     case 'o':
                         this.drink = {};
                         this.drink = this.drinks.RaspberryLime.drink;
+                        this.resetWarnings()
                         break;
                 }
             });
@@ -107,6 +115,15 @@ var app = new Vue({
             this.showMain = true;
             this.drink = {};
             this.keyTick = 0;
+        },
+        resetWarnings: function() {
+            this.keyTick = 0
+            this.firstWarning = false
+            this.finalWarning = false
+            this.alarm = false  
+            let alarm = document.getElementsByClassName('alarm-bell')[0]
+            alarm.pause()
+            alarm.currentTime = 0
         }
     },
     mounted() {
