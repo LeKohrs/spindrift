@@ -126,13 +126,21 @@ var app = new Vue({
                         alarm.currentTime = 0
                         break
                     case 's':
-                        console.log(this.drinks)
+                        this.nextDrink()
+                        // console.log(this.drinks)
                         break
                     case 'a':
-                        console.log(this.drinks)
+                        this.previousDrink()
+                        // console.log(this.drinks)
                         break
                 }
             });
+        },
+        nextDrink: function() {
+            console.log(`this.drinks.$[currentDrink]`)
+        },
+        previousDrink: function() {
+            console.log(`this.drinks.$[currentDrink]`)
         },
         showDrinks: function() {
             this.showDrink = true
