@@ -23,7 +23,8 @@ var app = new Vue({
         finalWarning: false,
         alarm: false,
         shutdown: false,
-        laCroix: false
+        laCroix: false,
+        currentDrink: null
     },
     methods: {
         keyPress: function() {
@@ -58,55 +59,63 @@ var app = new Vue({
                 }   
             });
             window.addEventListener("keyup", e => {
-                if(e.keyCode === 32){
+                if(e.key === 'p'){
                     this.reset()
                 }
                 switch (e.key) {
                     case 'w':
                         this.drink = {}
                         this.drink = this.drinks.HalfHalf.drink;
+                        this.currentDrink = 'HalHalf'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
                     case 'e':
                         this.drink = {}
                         this.drink = this.drinks.Strawberry.drink;
+                        this.currentDrink = 'Strawberry'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
                     case 'r':
                         this.drink = {}
                         this.drink = this.drinks.Grapefruit.drink;
+                        this.currentDrink = 'Grapefruit'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
                     case 't':
                         this.drink = {}
                         this.drink = this.drinks.Blackberry.drink;
+                        this.currentDrink = 'Blackberry'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
                     case 'y':
                         this.drink = {}
                         this.drink = this.drinks.Cucumber.drink;
+                        this.currentDrink = 'Cucumber'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
                     case 'u':
                         this.drink = {}
                         this.drink = this.drinks.Lemon.drink;
+                        this.currentDrink = 'Lemon'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
                     case 'i':
                         this.drink = {}
                         this.drink = this.drinks.OrangeMango.drink;
+                        this.currentDrink = 'OrangeMango'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
                     case 'o':
                         this.drink = {}
                         this.drink = this.drinks.RaspberryLime.drink;
+                        this.currentDrink = 'RaspberryLime'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
@@ -115,6 +124,13 @@ var app = new Vue({
                         let alarm = document.getElementsByClassName('alarm-bell')[0]
                         alarm.pause()
                         alarm.currentTime = 0
+                        break
+                    case 's':
+                        console.log(this.drinks)
+                        break
+                    case 'a':
+                        console.log(this.drinks)
+                        break
                 }
             });
         },
