@@ -30,20 +30,20 @@ var app = new Vue({
             window.addEventListener("keydown", e => {
                 if(e.key === 'w' || e.key === 'e' || e.key === 'r' || e.key === 't' || e.key === 'y' || e.key === 'u' || e.key === 'u' || e.key === 'i' || e.key === 'o') {
                     this.keyTick++
-                    if(this.keyTick >= 20 && this.keyTick <= 120) {
+                    if(this.keyTick >= 20 && this.keyTick <= 80) {
                         this.firstWarning = true
                     }
-                    else if (this.keyTick >= 121 && this.keyTick <= 220) {
+                    else if (this.keyTick >= 81 && this.keyTick <= 120) {
                         this.firstWarning = false
                         this.finalWarning = true
                     }
-                    else if (this.keyTick >= 221 && this.keyTick <= 320) {
+                    else if (this.keyTick >= 121 && this.keyTick <= 180) {
                         this.finalWarning = false
                         this.alarm = true
                         let alarm = document.getElementsByClassName('alarm-bell')[0]
                         alarm.play()                
                     }
-                    else if (this.keyTick >= 321) {
+                    else if (this.keyTick >= 181) {
                         this.alarm = false
                         let alarm = document.getElementsByClassName('alarm-bell')[0]
                         alarm.pause()
