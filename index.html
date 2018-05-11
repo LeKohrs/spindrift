@@ -16,6 +16,13 @@
                     Go on. You can touch it.
                 </p>
             </div>
+            <audio class="alarm-bell">
+                <source src="_ui/skin/src/audio/alarm.mp3" type="audio/mp3">
+            </audio>
+            <div v-show="laCroix" class="lacroix-warning">
+                <h1>Alarm</h1>
+                <h3>For your the sake of your tastebuds! Please back away from the can!</h3>
+            </div>
             <div class="drink-info" v-if="showDrink" :class="[drink.title.toLowerCase()]">
                 <div class="message">
                     <div v-show="firstWarning" class="first-warning banner">
@@ -27,9 +34,6 @@
                     <div v-show="alarm" class="alarm pop-up">
                         <h1>Alarm</h1>
                         <h3>Please back away from the can!</h3>
-                        <audio class="alarm-bell">
-                            <source src="_ui/skin/src/audio/alarm.mp3" type="audio/mp3">
-                        </audio>
                     </div>
                     <div v-show="shutdown" class="shut-down full"> 
                         <h3>You broke it.</h3>
@@ -61,9 +65,6 @@
             </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-        <script>
-
-        </script>
         <script src="app.js"></script>
         <script src="_ui/skin/dist/js/vendor.bundle.js"></script>
         <script src="_ui/skin/dist/js/main.bundle.js"></script>

@@ -22,89 +22,105 @@ var app = new Vue({
         firstWarning: false,
         finalWarning: false,
         alarm: false,
-        shutdown: false
+        shutdown: false,
+        laCroix: false
     },
     methods: {
         keyPress: function() {
             window.addEventListener("keydown", e => {
                 if(e.key === 'w' || e.key === 'e' || e.key === 'r' || e.key === 't' || e.key === 'y' || e.key === 'u' || e.key === 'u' || e.key === 'i' || e.key === 'o') {
-                    console.log(e.key)
                     this.keyTick++
-                    if(this.keyTick >= 20 && this.keyTick <= 40) {
+                    if(this.keyTick >= 20 && this.keyTick <= 120) {
                         this.firstWarning = true
-                        console.log('get a room')
                     }
-                    else if (this.keyTick >= 41 && this.keyTick <= 60) {
+                    else if (this.keyTick >= 121 && this.keyTick <= 220) {
                         this.firstWarning = false
                         this.finalWarning = true
-                        console.log('Let go of the can')
                     }
-                    else if (this.keyTick >= 61 && this.keyTick <= 100) {
+                    else if (this.keyTick >= 221 && this.keyTick <= 320) {
                         this.finalWarning = false
                         this.alarm = true
                         let alarm = document.getElementsByClassName('alarm-bell')[0]
-                        alarm.play()
-                        console.log('alarm bells')                        
+                        alarm.play()                
                     }
-                    else if (this.keyTick >= 101) {
+                    else if (this.keyTick >= 321) {
                         this.alarm = false
                         let alarm = document.getElementsByClassName('alarm-bell')[0]
                         alarm.pause()
                         alarm.currentTime = 0
-                        this.shutdown = true
-                        console.log("You're done. Move along")                        
+                        this.shutdown = true                      
                     }
+                }
+                if (e.key === 'd') {
+                    this.laCroix = true
+                    let alarm = document.getElementsByClassName('alarm-bell')[0]
+                    alarm.play()
                 }   
             });
             window.addEventListener("keyup", e => {
-                this.showDrink = true
-                this.showMain = false
                 if(e.keyCode === 32){
                     this.reset()
                 }
                 switch (e.key) {
                     case 'w':
-                        this.drink = {};
+                        this.drink = {}
                         this.drink = this.drinks.HalfHalf.drink;
                         this.resetWarnings()
+                        this.showDrinks()
                         break;
                     case 'e':
-                        this.drink = {};
+                        this.drink = {}
                         this.drink = this.drinks.Strawberry.drink;
                         this.resetWarnings()
+                        this.showDrinks()
                         break;
                     case 'r':
-                        this.drink = {};
+                        this.drink = {}
                         this.drink = this.drinks.Grapefruit.drink;
                         this.resetWarnings()
+                        this.showDrinks()
                         break;
                     case 't':
-                        this.drink = {};
+                        this.drink = {}
                         this.drink = this.drinks.Blackberry.drink;
                         this.resetWarnings()
+                        this.showDrinks()
                         break;
                     case 'y':
-                        this.drink = {};
+                        this.drink = {}
                         this.drink = this.drinks.Cucumber.drink;
                         this.resetWarnings()
+                        this.showDrinks()
                         break;
                     case 'u':
-                        this.drink = {};
+                        this.drink = {}
                         this.drink = this.drinks.Lemon.drink;
                         this.resetWarnings()
+                        this.showDrinks()
                         break;
                     case 'i':
-                        this.drink = {};
+                        this.drink = {}
                         this.drink = this.drinks.OrangeMango.drink;
                         this.resetWarnings()
+                        this.showDrinks()
                         break;
                     case 'o':
-                        this.drink = {};
+                        this.drink = {}
                         this.drink = this.drinks.RaspberryLime.drink;
                         this.resetWarnings()
+                        this.showDrinks()
                         break;
+                    case 'd':
+                        this.laCroix = false
+                        let alarm = document.getElementsByClassName('alarm-bell')[0]
+                        alarm.pause()
+                        alarm.currentTime = 0
                 }
             });
+        },
+        showDrinks: function() {
+            this.showDrink = true
+            this.showMain = false
         },
         reset: function() {
             this.firstWarning = false

@@ -82,7 +82,11 @@ li { list-style: none; }
 
 #app .drink-info .nutrition tr td:last-child { text-align: right; }
 
-#app .first-warning, #app .final-warning, #app .alarm, #app .shut-down { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; position: absolute; z-index: 10; background: white; }
+#app .main-text, #app .lacroix-warning, #app .first-warning, #app .final-warning, #app .alarm, #app .shut-down { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; position: absolute; z-index: 10; background: white; }
+
+#app .lacroix-warning { width: 800px; height: 500px; top: 50%; left: 50%; background: red; color: white; transform: translate(-50%, -50%); }
+
+#app .lacroix-warning h1 { color: white; }
 
 #app .banner { height: 90px; width: 100vw; top: 100px; left: 0; }
 
