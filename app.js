@@ -9,7 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
-const database = firebase.database()
+const database = firebase.database();
+const dbRefButton = firebase.database().ref('buttons');
 
 var app = new Vue({
     el: '#app',
@@ -189,9 +190,20 @@ var app = new Vue({
         this.keyPress();
     },
     created() {
+        let alarm = document.getElementsByClassName('alarm-bell')[0]
         database.ref('drinks').on('value', snapshot => {
             this.drinks = snapshot.val();
-        })
-        // console.log(this.drinks);
+        });
+        dbRefButton.on("value", snap => {
+            let larcroxButtonValue = snap.val().lacroix;
+            if(larcroxButtonValue) {
+                this.laCroix = false;
+                alarm.pause();
+            }
+            else {
+                this.laCroix = true;
+                alarm.play();
+            }
+        });
     }
 })
