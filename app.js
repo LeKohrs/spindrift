@@ -24,12 +24,13 @@ var app = new Vue({
         alarm: false,
         shutdown: false,
         laCroix: false,
-        currentDrink: null
+        currentDrink: null,
+        allDrinks: ['HalfHalf', 'Strawberry', 'Grapefruit', 'Blackberry', 'Cucumber', 'Lemon', 'OrangeMango', 'RaspberryLime']
     },
     methods: {
         keyPress: function() {
             window.addEventListener("keydown", e => {
-                if(e.key === 'w' || e.key === 'e' || e.key === 'r' || e.key === 't' || e.key === 'y' || e.key === 'u' || e.key === 'u' || e.key === 'i' || e.key === 'o') {
+                if(e.key === 'r' || e.key === 'u' || e.key === 'o') {
                     this.keyTick++
                     if(this.keyTick >= 20 && this.keyTick <= 80) {
                         this.firstWarning = true
@@ -63,20 +64,6 @@ var app = new Vue({
                     this.reset()
                 }
                 switch (e.key) {
-                    case 'w':
-                        this.drink = {}
-                        this.drink = this.drinks.HalfHalf.drink;
-                        this.currentDrink = 'HalHalf'
-                        this.resetWarnings()
-                        this.showDrinks()
-                        break;
-                    case 'e':
-                        this.drink = {}
-                        this.drink = this.drinks.Strawberry.drink;
-                        this.currentDrink = 'Strawberry'
-                        this.resetWarnings()
-                        this.showDrinks()
-                        break;
                     case 'r':
                         this.drink = {}
                         this.drink = this.drinks.Grapefruit.drink;
@@ -84,31 +71,10 @@ var app = new Vue({
                         this.resetWarnings()
                         this.showDrinks()
                         break;
-                    case 't':
-                        this.drink = {}
-                        this.drink = this.drinks.Blackberry.drink;
-                        this.currentDrink = 'Blackberry'
-                        this.resetWarnings()
-                        this.showDrinks()
-                        break;
-                    case 'y':
-                        this.drink = {}
-                        this.drink = this.drinks.Cucumber.drink;
-                        this.currentDrink = 'Cucumber'
-                        this.resetWarnings()
-                        this.showDrinks()
-                        break;
                     case 'u':
                         this.drink = {}
                         this.drink = this.drinks.Lemon.drink;
                         this.currentDrink = 'Lemon'
-                        this.resetWarnings()
-                        this.showDrinks()
-                        break;
-                    case 'i':
-                        this.drink = {}
-                        this.drink = this.drinks.OrangeMango.drink;
-                        this.currentDrink = 'OrangeMango'
                         this.resetWarnings()
                         this.showDrinks()
                         break;
@@ -127,20 +93,73 @@ var app = new Vue({
                         break
                     case 's':
                         this.nextDrink()
-                        // console.log(this.drinks)
+                        console.log(this.currentDrink)
                         break
                     case 'a':
                         this.previousDrink()
-                        // console.log(this.drinks)
+                        console.log(this.currentDrink)
                         break
                 }
             });
         },
         nextDrink: function() {
-            console.log(`this.drinks.$[currentDrink]`)
+            for (let i = 0, l = this.allDrinks.length; i < l; i++) {
+                if (this.currentDrink === this.allDrinks[i]) {
+                    if (this.currentDrink === this.allDrinks[this.allDrinks.length - 1]) {
+                        this.currentDrink = this.allDrinks[0]
+                        this.sortDrinks(this.currentDrink)
+                        return
+                    }
+                    else {
+                        this.currentDrink = this.allDrinks[i + 1]
+                        this.sortDrinks(this.currentDrink)
+                        return
+                    }
+                }
+            }
         },
         previousDrink: function() {
-            console.log(`this.drinks.$[currentDrink]`)
+            for (let i = 0, l = this.allDrinks.length; i < l; i++) {
+                if (this.currentDrink === this.allDrinks[i]) {
+                    if (this.currentDrink === this.allDrinks[0]) {
+                        this.currentDrink = this.allDrinks[this.allDrinks.length - 1]
+                        this.sortDrinks(this.currentDrink)
+                        return
+                    }
+                    else {
+                        this.currentDrink = this.allDrinks[i - 1]
+                        this.sortDrinks(this.currentDrink)
+                        return
+                    }
+                }
+            }
+        },
+        sortDrinks: function(drink) {
+            if(drink === 'Lemon') {
+                this.drink = this.drinks.Lemon.drink;
+            }
+            else if (drink === 'HalfHalf') {
+                this.drink = this.drinks.HalfHalf.drink;
+            }
+            else if (drink === 'Strawberry') {
+                this.drink = this.drinks.Strawberry.drink;
+            }
+            else if (drink === 'Grapefruit') {
+                this.drink = this.drinks.Grapefruit.drink;
+            }
+            else if (drink === 'Blackberry') {
+                this.drink = this.drinks.Blackberry.drink;
+            }
+            else if (drink === 'Cucumber') {
+                this.drink = this.drinks.Cucumber.drink;
+            }
+            else if (drink === 'OrangeMango') {
+                this.drink = this.drinks.OrangeMango.drink;
+            }
+            else if (drink === 'RaspberryLime') {
+                this.drink = this.drinks.RaspberryLime.drink;
+            }
+
         },
         showDrinks: function() {
             this.showDrink = true
