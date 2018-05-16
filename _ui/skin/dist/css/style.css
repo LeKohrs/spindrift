@@ -16,7 +16,7 @@ li { list-style: none; }
 
 #app .main-text { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; -ms-flex-direction: column; flex-direction: column; width: 100vw; height: 100vh; }
 
-#app .drink-info { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; width: 100vw; height: 100vh; }
+#app .drink-info { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; width: 100vw; height: 100vh; }
 
 #app .drink-info:after { content: ''; position: absolute; width: 100vw; height: 50vh; bottom: 0; left: 0; z-index: -1; }
 
@@ -26,31 +26,31 @@ li { list-style: none; }
 
 #app .drink-info.strawberry:after { background-color: #ff7a7b; }
 
-#app .drink-info.strawberry .name { color: #ff7a7b; }
+#app .drink-info.strawberry .name { color: #dc153e; }
 
 #app .drink-info.grapefruit:after { background-color: #fd9ca4; }
 
-#app .drink-info.grapefruit .name { color: #fd9ca4; }
+#app .drink-info.grapefruit .name { color: #e7506b; }
 
 #app .drink-info.blackberry:after { background-color: #b999c2; }
 
-#app .drink-info.blackberry .name { color: #b999c2; }
+#app .drink-info.blackberry .name { color: #604082; }
 
 #app .drink-info.cucumber:after { background-color: #9ad3ca; }
 
-#app .drink-info.cucumber .name { color: #9ad3ca; }
+#app .drink-info.cucumber .name { color: #1b9a97; }
 
 #app .drink-info.lemon:after { background-color: #a3c6ee; }
 
-#app .drink-info.lemon .name { color: #a3c6ee; }
+#app .drink-info.lemon .name { color: #3079be; }
 
 #app .drink-info.orange:after { background-color: #ffb633; }
 
-#app .drink-info.orange .name { color: #ffb633; }
+#app .drink-info.orange .name { color: #f9524b; }
 
 #app .drink-info.raspberry:after { background-color: #e15c95; }
 
-#app .drink-info.raspberry .name { color: #e15c95; }
+#app .drink-info.raspberry .name { color: #ce276e; }
 
 #app .drink-info img { max-width: 250px; }
 
@@ -58,15 +58,13 @@ li { list-style: none; }
 
 #app .drink-info__info, #app .drink-info__text { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: center; align-items: center; }
 
-#app .drink-info__text { width: calc(50% - 50px); height: 167px; transform: translateY(25px); }
+#app .drink-info__text { -ms-flex-align: start; align-items: flex-start; width: calc(41% - 50px); height: 167px; transform: translateY(25px); }
 
 #app .drink-info img, #app .drink-info__info { width: calc(25% - 50px); }
 
 #app .drink-info__info { height: auto; transform: translateY(37px); }
 
-#app .drink-info .name { font-style: italic; }
-
-#app .drink-info .text { max-width: 900px; }
+#app .drink-info .text { max-width: 450px; line-height: 1.25; }
 
 #app .drink-info .ingredients { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-bottom: 30px; padding-left: 0; }
 
@@ -86,13 +84,23 @@ li { list-style: none; }
 
 #app .lacroix-warning { width: 800px; height: 500px; top: 50%; left: 50%; background: red; color: white; transform: translate(-50%, -50%); }
 
-#app .lacroix-warning h1 { color: white; }
+#app .lacroix-warning h1 { color: white; font-size: 97px; line-height: .5; }
+
+#app .lacroix-warning h3 { font-size: 20px; }
+
+#app .lacroix-warning h3:nth-child(2) { line-height: .5; }
+
+#app .lacroix-warning h3:last-child { font-size: 30px; }
 
 #app .banner { height: 90px; width: 100vw; top: 100px; left: 0; }
 
 #app .pop-up { width: 800px; height: 500px; top: 50%; left: 50%; color: red; text-transform: uppercase; transform: translate(-50%, -50%); border: 1px solid red; box-shadow: 0 0 5px grey; text-align: center; }
 
 #app .pop-up h3 { font-size: 40px; }
+
+#app .first-warning.pop-up { border: 1px solid #535151; color: #535151; }
+
+#app .alarm.pop-up h1 { color: red; }
 
 #app .full { width: 100vw; height: 100vh; top: 0; left: 0; }
 

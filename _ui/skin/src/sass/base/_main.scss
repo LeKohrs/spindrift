@@ -47,7 +47,7 @@ li {
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
+        // text-align: center;
         width: 100vw;
         height: 100vh;
 
@@ -74,7 +74,7 @@ li {
             }
 
             .name {
-                color: $site-color-strawberry;
+                color: #dc153e;
             }
         }
         &.grapefruit {
@@ -83,7 +83,7 @@ li {
             }
 
             .name {
-                color: $site-color-grapefruit;
+                color: #e7506b;
             }
         }
         &.blackberry {
@@ -92,7 +92,7 @@ li {
             }
 
             .name {
-                color: $site-color-blackberry;
+                color: #604082;
             }
         }
         &.cucumber {
@@ -101,7 +101,7 @@ li {
             }
 
             .name {
-                color: $site-color-cucumber;
+                color: #1b9a97;
             }
         }
         &.lemon {
@@ -110,7 +110,7 @@ li {
             }
 
             .name {
-                color: $site-color-lemon;
+                color: #3079be;
             }
         }
         &.orange {
@@ -119,7 +119,7 @@ li {
             }
 
             .name {
-                color: $site-color-orange;
+                color: #f9524b;
             }
         }
         &.raspberry {
@@ -128,7 +128,7 @@ li {
             }
 
             .name {
-                color: $site-color-raspberry;
+                color: #ce276e;
             }
         }
         img {
@@ -147,7 +147,8 @@ li {
             align-items: center;
         }
         &__text {
-            width: calc(50% - 50px);
+            align-items: flex-start;
+            width: calc(41% - 50px);
             height: 167px;
             transform: translateY(25px);
         }
@@ -161,10 +162,11 @@ li {
         }
         .name {
             // margin-bottom: 100px;
-            font-style: italic;
+            // font-style: italic;
         }
         .text {
-            max-width: 900px;
+            max-width: 450px;
+            line-height: 1.25;
         }
         .ingredients {
             display: flex;
@@ -224,6 +226,18 @@ li {
         
         h1 {
             color: white;
+            font-size: 97px;
+            line-height: .5;
+        }
+        h3 {
+            font-size: 20px;
+
+            &:nth-child(2) {
+                line-height: .5;
+            }
+            &:last-child {
+                font-size: 30px;
+            }
         }
     }
     .banner {
@@ -243,9 +257,17 @@ li {
         border: 1px solid red;
         box-shadow: 0 0 5px grey;
         text-align: center;
-
         h3 {
             font-size: 40px;
+        }
+    }
+    .first-warning.pop-up {
+        border: 1px solid #535151;
+        color: #535151;
+    }
+    .alarm.pop-up {
+        h1 {
+            color: red;
         }
     }
     .full {
